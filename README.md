@@ -1,5 +1,7 @@
 # Golang sync.Once improvements for intialisers
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/nguyengg/init-once.svg)](https://pkg.go.dev/github.com/nguyengg/init-once)
+
 Get with:
 ```shell
 go get github.com/nguyengg/init-once
