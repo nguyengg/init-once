@@ -16,16 +16,16 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	init "github.com/nguyengg/init-once"
+	ini "github.com/nguyengg/init-once"
 )
 
 type App struct {
 	Client *s3.Client
-	once   init.Once
+	once   ini.Once
 }
 
 func (a *App) DoSomething(ctx context.Context) error {
-	// because init.Once is used, subsequent a.once.Do will always return the same error, nil or non-nil.
+	// because ini.Once is used, subsequent a.once.Do will always return the same error, nil or non-nil.
 	if err := a.once.Do(func() error {
 		return a.init(ctx)
 	}); err != nil {
@@ -63,16 +63,16 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	init "github.com/nguyengg/init-once"
+	ini "github.com/nguyengg/init-once"
 )
 
 type App struct {
 	Client *s3.Client
-	once   init.SuccessOnce
+	once   ini.SuccessOnce
 }
 
 func (a *App) DoSomething(ctx context.Context) error {
-	// because init.SuccessOnce is used, init can be retried until its first success!
+	// because ini.SuccessOnce is used, ini can be retried until its first success!
 	if err := a.once.Do(func() error {
 		return a.init(ctx)
 	}); err != nil {

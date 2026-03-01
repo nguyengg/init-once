@@ -1,9 +1,9 @@
-// Package init provides sync.Once alternatives for initialisers.
+// Package ini provides sync.Once alternatives for initialisers.
 //
 // Once is similar to sync.Once except it returns an error natively so that there's no need to separately set an error.
 //
 // SuccessOnce allows the initialiser to be run multiple times (but not concurrently) until the first success.
-package init
+package ini
 
 import (
 	"sync"
